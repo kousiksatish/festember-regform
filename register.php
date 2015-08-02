@@ -103,7 +103,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 		$designation = "";
 		$rollno = "";
 		$email = "";
-		$phoneno = "":
+		$phoneno = "";
 		$img = "";
 
 		$err_flag = false;

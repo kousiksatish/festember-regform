@@ -10,9 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Festember Registration Form">
     <meta name="author" content="Delta Force">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="../15/favicon.png">
 
-    <title>Festember Registration</title>
+    <title>Festember Team Registration</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Festember</a>
+          <a class="navbar-brand" href="#">Festember Team</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
@@ -92,37 +92,101 @@
         <input type="text" class="form-control" name="idname" placeholder="ID Name" value="<?php echo $idname; ?>" required>
       </div>
     </div>
+    <?php
+      $teams = array(
+          "marketing" => "Marketing",
+          "media"  => "Media Relations",
+          "oc" => "Organising Committee",
+          "qmt"  => "Quality Management",
+          "hospitality"  => "Hospitality",
+          "pr" => "Public Relations",
+          "webops" => "Web-Ops",
+          "design" => "Design",
+          "workshops"  => "Workshops",
+          "informals"  => "Informals",
+          "publicity" => "Publicity",
+          "events" => "Events",       
+          "content"  => "Content",
+          "pixelbug" => "Pixelbug",
+          "arts" => "Arts",
+          "ambience" => "Ambience",
+          "englits"  => "English Lits",
+          "tamlits"  => "Tamil Lits",
+          "hinlits"  => "Hindi Lits",
+          "dance"  => "Dance Troupe",
+          "music"  => "Music Troupe",
+          "shrutilaya"  => "Shrutilaya",
+          "cinematics"  => "Cinematics",
+          "thespi"  => "Thespian",
+          "fashion"  => "Fashion",
+          "moctail"  => "MoCTail",
+          "fsr"  => "Social Responsibility",
+          "culturals"  => "Culturals",
+          "gl"  => "Guest Lectures",
+        );
+    ?>
     <div class="form-group">
       <label for="teamname" class="col-sm-2 control-label">Team Name</label>
       <div class="col-sm-3">
-        <select class="form-control" name="teamname" value="<?php echo $teamname; ?>" required>
-          <option value="marketing">Marketing</option>
-          <option value="publicity">Publicity</option>
-          <option value="workshops">Workshops</option>
-          <option value="events">Events</option>
-          <option value="csg">CSG</option>
-          <option value="fsr">FSR</option>
+        <select class="form-control" name="teamname" required>
+          <?php
+            foreach($teams as $key=>$value)
+            {
+              echo '<option value="'.$key;
+              if($key == $teamname)
+                echo '" selected="selected';
+              echo '">'.$value.'</option>';
+            }
+          ?>
         </select>
       </div>
     </div>
 
+    <?php
+      $years = array(
+          "2" => "II",
+          "3" => "III",
+          "4" => "IV"
+        );
+    ?>
+
     <div class="form-group">
       <label for="year" class="col-sm-2 control-label">Year</label>
       <div class="col-sm-3">
-        <select class="form-control" name="year" value="<?php echo $year; ?>"  required>
-          <option value="2">II</option>
-          <option value="3">III</option>
-          <option value="4">IV</option>
+        <select class="form-control" name="year" required>
+          <?php
+            foreach($years as $key=>$value)
+            {
+              echo '<option value="'.$key;
+              if($key == $year)
+                echo '" selected="selected';
+              echo '">'.$value.'</option>';
+            }
+          ?>
         </select>
       </div>
     </div>
+
+    <?php
+      $desigs = array(
+          "manager" => "Manager",
+          "deputymanager" => "Deputy Manager",
+          "coordinator" => "Coordinator"
+        );
+    ?>
     <div class="form-group">
       <label for="designation" class="col-sm-2 control-label">Designation</label>
       <div class="col-sm-3">
-        <select class="form-control" name="designation" value="<?php echo $designation; ?>" required>
-          <option value="manager">Manager</option>
-          <option value="deputymanager">Deputy Manager</option>
-          <option value="coordinator">Coordinator</option>
+        <select class="form-control" name="designation" required>
+          <?php
+            foreach($desigs as $key=>$value)
+            {
+              echo '<option value="'.$key;
+              if($key == $designation)
+                echo '" selected="selected';
+              echo '">'.$value.'</option>';
+            }
+          ?>
         </select>
       </div>
     </div>
@@ -132,21 +196,33 @@
         <input type="text" class="form-control" name="rollno" pattern="[0-9]{9}" title="9 digit rollno" value="<?php echo $rollno; ?>" placeholder="Roll Number" required>
       </div>
     </div>
-
+    <?php 
+      $depts = array(
+            "arch" => "ARCH",
+            "chem" => "CHEM",
+            "civ" => "CIV",
+            "cse" => "CSE",
+            "ece" => "ECE",
+            "eee" => "EEE",
+            "ice" => "ICE",
+            "mech" => "MECH",
+            "meta" => "META",
+            "prod" => "PROD"
+        );
+    ?>
     <div class="form-group">
       <label for="dept" class="col-sm-2 control-label">Department</label>
       <div class="col-sm-3">
-        <select class="form-control" name="dept" value="<?php echo $dept; ?>" required>
-            <option value="arch">ARCH</option>
-            <option value="chem">CHEM</option>
-            <option value="civ">CIV</option>
-            <option value="cse">CSE</option>
-            <option value="ece">ECE</option>
-            <option value="eee">EEE</option>
-            <option value="ice">ICE</option>
-            <option value="mech">MECH</option>
-            <option value="meta">META</option>
-            <option value="prod">PROD</option>
+        <select class="form-control" name="dept" required>
+            <?php
+            foreach($depts as $key=>$value)
+            {
+              echo '<option value="'.$key;
+              if($key == $dept)
+                echo '" selected="selected';
+              echo '">'.$value.'</option>';
+            }
+            ?>
         </select>
       </div>
     </div>
@@ -154,7 +230,7 @@
     <div class="form-group">
       <label for="phoneno" class="col-sm-2 control-label">Phone Number</label>
       <div class="col-sm-3">
-        <input type="text" class="form-control" name="phoneno" placeholder="Phone Number" pattern="[0-9]{10}" title="9 digit rollno" value="<?php echo $phoneno; ?>"  required>
+        <input type="text" class="form-control" name="phoneno" placeholder="Phone Number" pattern="[0-9]{10}" title="10 digit moile no" value="<?php echo $phoneno; ?>"  required>
       </div>
     </div>
 
@@ -182,6 +258,6 @@
 </form>
 </div>
 </div>
-  </body>
+</body>
 
 </html>
