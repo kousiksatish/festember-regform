@@ -123,6 +123,7 @@
           "fsr"  => "Social Responsibility",
           "culturals"  => "Culturals",
           "gl"  => "Guest Lectures",
+          "gaming" => "Gaming"
         );
     ?>
     <div class="form-group">
@@ -146,7 +147,8 @@
       $years = array(
           "2" => "II",
           "3" => "III",
-          "4" => "IV"
+          "4" => "IV",
+          "5" => "V"
         );
     ?>
 
@@ -245,6 +247,8 @@
       <label for="photo" class="col-sm-2 control-label">Photo for ID</label>
       <div class="col-sm-3">
         <input type="file" class="form-control" name="img" placeholder="File" required>
+        <li>Image should be square shaped<br>(1:1 height-width ratio)</li>
+        <li>File name format : idname_teamname</li>
       </div>
     </div>
 

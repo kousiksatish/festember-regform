@@ -68,7 +68,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
 
 		$target_dir = "uploads/";
-		$target_file = $target_dir . $rollno . '.' .$ext;
+		//$target_file = $target_dir . $rollno . '.' .$ext;
+		$target_file = $target_dir . $_FILES['img']['name'];
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 		move_uploaded_file($_FILES["img"]["tmp_name"], $target_file)
 			or die("Error");
