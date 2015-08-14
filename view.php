@@ -1,3 +1,8 @@
+<?php
+  include 'session_handle.php';
+  include 'dbconfig.php';
+?>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -38,6 +43,7 @@
           <ul class="nav navbar-nav">
             <li><a href="./">Home</a></li>
             <li class="active"><a href="#">View</a></li>
+            <li><a href="logout.php">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -61,7 +67,7 @@
 
 
     <?php
-    	include 'dbconfig.php';
+    	
     	$tablename = "register";
 
     	$query = "SELECT * FROM register";
