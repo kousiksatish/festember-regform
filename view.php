@@ -132,6 +132,8 @@
         );
     	while($row = mysqli_fetch_array($result))
     	{
+          $idd = $row['id'];
+          $stt = "<a href='edit.php?id=$idd'>Edit</a>"
     ?>
 
     	var temp = [];
@@ -144,7 +146,7 @@
     	temp.push("<?php echo $depts[$row['dept']] ?>");
     	temp.push("<?php echo $row['email'] ?>");
     	temp.push("<?php echo $row['phoneno'] ?>");
-    	temp.push("<?php echo $row['img'] ?>");
+    	temp.push("<?php echo $stt; ?>");
 
     	dataSet.push(temp);
     <?php
@@ -167,7 +169,7 @@
     			{ "title" : "Dept"},
     			{ "title" : "Email"},
     			{ "title" : "Phone"},
-    			{ "title" : "Img"}
+    			{ "title" : "Edit"}
     		]
     	});
     });
